@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <style>
+        /* Basic styling for the body and header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d1f0f2;
+        }
+
+        header {
+            background-color: #95dde4;
+            color: rgb(0, 0, 0);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #95dde4;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #d2e9e8;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+            color: white;
+        }
+
+        /* Styling for the vertical tabs */
+        .tabs-container {
+            display: flex;
+            justify-content: center; /* Centering tabs horizontally */
+            margin-top: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .tabs a {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #d2e9e8;
+            color: black;
+            text-decoration: none;
+            border-radius: 4px;
+            width: 150px; /* Fixed width for consistency */
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .tabs a:hover {
+            background-color: #666;
+            color: white;
+        }
+
+    
+
+        /* Additional responsive design for small screens */
+        @media (max-width: 768px) {
+            .tabs a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="topics.html">Java Codes</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+
+    
+    
+
+        <h1>Control Structures in PHP</h1>
+    
+        <h2>1. Branching Statements</h2>
+        <h3>If-Else Statement</h3>
+        <p>The <code>if-else</code> statement allows you to execute different blocks of code based on a condition. If the condition evaluates to true, the code within the <code>if</code> block runs; if it evaluates to false, the code within the <code>else</code> block runs.</p>
+        <pre><code>
+    if ($age >= 18) {
+        echo "You are an adult.";
+    } else {
+        echo "You are a minor.";
+    }
+        </code></pre>
+    
+        <h3>Ternary Operator</h3>
+        <p>The <code>ternary operator</code> is a shorthand way to write an <code>if-else</code> statement. It takes three operands: a condition, a value if true, and a value if false.</p>
+        <pre><code>
+    $message = ($age >= 18) ? "You are an adult." : "You are a minor.";
+    echo $message;
+        </code></pre>
+    
+        <h3>Switch Statement</h3>
+        <p>The <code>switch</code> statement allows you to evaluate a variable against multiple possible values. It is a more efficient way to handle multiple conditions compared to using multiple <code>if-else</code> statements.</p>
+        <pre><code>
+    switch ($day) {
+        case 1:
+            echo "Monday";
+            break;
+        case 2:
+            echo "Tuesday";
+            break;
+        default:
+            echo "Another day";
+            break;
+    }
+        </code></pre>
+    
+        <h2>2. Looping Statements</h2>
+        <h3>While Loop</h3>
+        <p>The <code>while</code> loop repeatedly executes a block of code as long as a specified condition is true. It checks the condition before executing the block.</p>
+        <pre><code>
+    $count = 1;
+    while ($count <= 5) {
+        echo $count;
+        $count++;
+    }
+        </code></pre>
+    
+        <h3>Do-While Loop</h3>
+        <p>The <code>do-while</code> loop is similar to the <code>while</code> loop, but it guarantees that the code block will be executed at least once, as the condition is checked after the block executes.</p>
+        <pre><code>
+    $count = 1;
+    do {
+        echo $count;
+        $count++;
+    } while ($count <= 5);
+        </code></pre>
+    
+        <h3>For Loop</h3>
+        <p>The <code>for</code> loop is used when you know in advance how many times you want to execute a block of code. It consists of three parts: initialization, condition, and increment/decrement.</p>
+        <pre><code>
+    for ($i = 1; $i <= 5; $i++) {
+        echo $i;
+    }
+        </code></pre>
+    
+        <h2>3. File Inclusion Statements</h2>
+        <p>File inclusion statements allow you to include the contents of one PHP file into another. This is useful for organizing code and reusing functions or variables. PHP provides three main functions for file inclusion:</p>
+        <ul>
+            <li><strong>include:</strong> Includes and evaluates the specified file. If the file is not found, a warning is issued, but the script continues execution.</li>
+            <pre><code>include 'header.php';</code></pre>
+            <li><strong>require:</strong> Similar to <code>include</code>, but if the file is not found, a fatal error occurs, and the script stops execution.</li>
+            <pre><code>require 'config.php';</code></pre>
+            <li><strong>include_once:</strong> Includes a file only once, preventing redeclaration errors if the file is included multiple times.</li>
+            <pre><code>include_once 'functions.php';</code></pre>
+        </ul>
+    
+    
+    
+</body>
+</html>

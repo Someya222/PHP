@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <style>
+        /* Basic styling for the body and header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d1f0f2;
+        }
+
+        header {
+            background-color: #95dde4;
+            color: rgb(0, 0, 0);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #95dde4;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #d2e9e8;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+            color: white;
+        }
+
+        /* Styling for the vertical tabs */
+        .tabs-container {
+            display: flex;
+            justify-content: center; /* Centering tabs horizontally */
+            margin-top: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .tabs a {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #d2e9e8;
+            color: black;
+            text-decoration: none;
+            border-radius: 4px;
+            width: 150px; /* Fixed width for consistency */
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .tabs a:hover {
+            background-color: #666;
+            color: white;
+        }
+
+    
+
+        /* Additional responsive design for small screens */
+        @media (max-width: 768px) {
+            .tabs a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="topics.html">Java Codes</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <body>
+
+        <h1>Functions in PHP</h1>
+    
+        <h2>1. Function Definition</h2>
+        <p>A <strong>function</strong> is a block of code that performs a specific task and can be reused throughout the program. Functions help in organizing code, making it more readable and maintainable.</p>
+        <p>The basic syntax for defining a function is as follows:</p>
+        <pre><code>
+    function functionName() {
+        // Code to be executed
+    }
+        </code></pre>
+    
+        <h2>2. Creating and Invoking User-Defined Functions</h2>
+        <p>You can create user-defined functions to perform specific operations. After defining a function, you can invoke it by using its name followed by parentheses.</p>
+        <h3>Example:</h3>
+        <pre><code>
+    function greet($name) {
+        return "Hello, " . $name . "!";
+    }
+    
+    echo greet("Alice"); // Outputs: Hello, Alice!
+        </code></pre>
+    
+        <h2>3. Formal Parameters versus Actual Parameters</h2>
+        <p><strong>Formal parameters</strong> are the variables listed as part of a function's definition, while <strong>actual parameters</strong> are the values you pass to the function when invoking it.</p>
+        <h3>Example:</h3>
+        <pre><code>
+    function add($a, $b) { // $a and $b are formal parameters
+        return $a + $b;
+    }
+    
+    echo add(5, 10); // 5 and 10 are actual parameters
+        </code></pre>
+    
+        <h2>4. Function and Variable Scope</h2>
+        <p>The <strong>scope</strong> of a variable determines where it can be accessed in the code. There are two main types of scope in PHP:</p>
+        <ul>
+            <li><strong>Local Scope:</strong> Variables defined within a function can only be accessed within that function.</li>
+            <pre><code>
+    function test() {
+        $localVar = "I am local";
+        echo $localVar;
+    }
+    test(); // Outputs: I am local
+    // echo $localVar; // Error: Undefined variable
+            </code></pre>
+            <li><strong>Global Scope:</strong> Variables defined outside of any function can be accessed globally, but must be explicitly declared as global inside functions.</li>
+            <pre><code>
+    $globalVar = "I am global";
+    
+    function showGlobal() {
+        global $globalVar;
+        echo $globalVar;
+    }
+    showGlobal(); // Outputs: I am global
+            </code></pre>
+        </ul>
+    
+        <h2>5. Recursion</h2>
+        <p><strong>Recursion</strong> is a programming technique where a function calls itself to solve a problem. It is essential to have a base case to prevent infinite loops.</p>
+        <h3>Example:</h3>
+        <pre><code>
+    function factorial($n) {
+        if ($n <= 1) {
+            return 1; // Base case
+        } else {
+            return $n * factorial($n - 1); // Recursive call
+        }
+    }
+    
+    echo factorial(5); // Outputs: 120
+        </code></pre>
+    
+        <h2>6. Library Functions</h2>
+        <p>PHP comes with a rich set of built-in functions, known as <strong>library functions</strong>, that can perform various tasks. You can use these functions without needing to define them yourself.</p>
+        <h3>Example:</h3>
+        <pre><code>
+    $length = strlen("Hello, World!"); // strlen() is a library function
+    echo $length; // Outputs: 13
+        </code></pre>
+    
+    </body>
+    
+    
+
+</body>
+</html>

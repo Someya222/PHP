@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <style>
+        /* Basic styling for the body and header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d1f0f2;
+        }
+
+        header {
+            background-color: #95dde4;
+            color: rgb(0, 0, 0);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #95dde4;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #d2e9e8;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+        }
+
+        /* Styling for the main content */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PHP</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="topics.html">PHP Topics</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    <body>
+
+        <h1>PHP Basics</h1>
+    
+        <h2>1. Tokens</h2>
+        <p>In PHP, tokens are the smallest units of code that the parser recognizes. Tokens include keywords, variables, operators, and symbols. They form the building blocks of PHP scripts. Understanding tokens is essential for writing syntactically correct code.</p>
+    
+        <h2>2. Variables</h2>
+        <p>Variables in PHP are used to store data. They are declared with a dollar sign ($) followed by the variable name. Variable names are case-sensitive and can contain letters, numbers, and underscores. For example:</p>
+        <pre><code>$name = "John";</code></pre>
+        <p>This creates a variable named <code>$name</code> that holds the string value "John".</p>
+    
+        <h2>3. Variable Scope</h2>
+        <p>Variable scope determines the accessibility of variables in different parts of a program. PHP has four types of variable scope:</p>
+        <ul>
+            <li><strong>Local Scope:</strong> Variables declared inside a function are local to that function.</li>
+            <li><strong>Global Scope:</strong> Variables declared outside of functions are in the global scope and can be accessed from anywhere in the script.</li>
+            <li><strong>Static Scope:</strong> A static variable retains its value across function calls.</li>
+            <li><strong>Parameter Scope:</strong> Variables passed as parameters to functions are accessible only within that function.</li>
+        </ul>
+    
+        <h2>4. Constants</h2>
+        <p>Constants are identifiers that hold fixed values. Unlike variables, constants cannot be changed once defined. They are declared using the <code>define()</code> function:</p>
+        <pre><code>define("SITE_NAME", "My Website");</code></pre>
+        <p>This creates a constant <code>SITE_NAME</code> with the value "My Website". Constants are often used for configuration values that should not change.</p>
+    
+        <h2>5. Data Types</h2>
+        <p>PHP supports several data types, which can be categorized as:</p>
+        <ul>
+            <li><strong>String:</strong> A sequence of characters. Example: <code>"Hello, World!"</code></li>
+            <li><strong>Integer:</strong> A whole number. Example: <code>42</code></li>
+            <li><strong>Float:</strong> A number with a decimal point. Example: <code>3.14</code></li>
+            <li><strong>Boolean:</strong> A value that can be either true or false.</li>
+            <li><strong>Array:</strong> A collection of values stored in a single variable.</li>
+            <li><strong>Object:</strong> An instance of a class.</li>
+            <li><strong>NULL:</strong> A special type that represents a variable with no value.</li>
+        </ul>
+    
+        <h2>6. Number Handling in PHP</h2>
+        <p>PHP provides several functions for handling numbers, including:</p>
+        <ul>
+            <li><code>abs()</code>: Returns the absolute value of a number.</li>
+            <li><code>round()</code>: Rounds a floating-point number to the nearest integer.</li>
+            <li><code>rand()</code>: Generates a random integer.</li>
+            <li><code>max()</code>: Returns the highest value from a set of numbers.</li>
+            <li><code>min()</code>: Returns the lowest value from a set of numbers.</li>
+        </ul>
+    
+        <h2>7. Operands</h2>
+        <p>Operands are the values on which operators perform actions. In PHP, operands can be variables, constants, or literals. For example:</p>
+        <pre><code>$sum = $a + $b;</code></pre>
+        <p>Here, <code>$a</code> and <code>$b</code> are operands.</p>
+    
+        <h2>8. Operators</h2>
+        <p>PHP supports various operators, which can be classified into categories:</p>
+        <ul>
+            <li><strong>Arithmetic Operators:</strong> Used for mathematical operations (e.g., +, -, *, /, %).</li>
+            <li><strong>Comparison Operators:</strong> Used to compare values (e.g., ==, !=, >, <, ===).</li>
+            <li><strong>Logical Operators:</strong> Used to combine conditional statements (e.g., &&, ||, !).</li>
+            <li><strong>Assignment Operators:</strong> Used to assign values (e.g., =, +=, -=).</li>
+        </ul>
+    
+        <h2>9. Expressions</h2>
+        <p>An expression is a combination of variables, constants, operators, and functions that PHP evaluates to produce a value. For example:</p>
+        <pre><code>$result = ($a + $b) * $c;</code></pre>
+        <p>This expression combines addition and multiplication to produce a result.</p>
+    
+        <h2>10. Operator Precedence</h2>
+        <p>Operator precedence determines the order in which operations are performed in an expression. For example, multiplication and division have higher precedence than addition and subtraction. You can use parentheses to alter precedence:</p>
+        <pre><code>$result = $a + $b * $c; // Multiplies first</code></pre>
+        <p>To change the order, use parentheses:</p>
+        <pre><code>$result = ($a + $b) * $c; // Adds first</code></pre></p>
+    
+        <h2>11. Comments</h2>
+        <p>Comments in PHP are used to annotate code, making it easier to understand. PHP supports single-line and multi-line comments:</p>
+        <ul>
+            <li><strong>Single-Line Comment:</strong> <code>// This is a single-line comment</code></li>
+            <li><strong>Multi-Line Comment:</strong> <code>/* This is a multi-line comment */</code></li>
+        </ul>
+    
+        <h2>12. Echo and Print Statements</h2>
+        <p>The <code>echo</code> and <code>print</code> statements are used to output data to the screen:</p>
+        <ul>
+            <li><code>echo:</code> Can take multiple parameters and does not return a value. Example: <code>echo "Hello, World!";</code></li>
+            <li><code>print:</code> Can only take one argument and always returns 1. Example: <code>print "Hello, World!";</code></li>
+        </ul>
+    
+    </body>
+    
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <style>
+        /* Basic styling for the body and header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d1f0f2;
+        }
+
+        header {
+            background-color: #95dde4;
+            color: rgb(0, 0, 0);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #95dde4;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #d2e9e8;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+            color: white;
+        }
+
+        /* Styling for the vertical tabs */
+        .tabs-container {
+            display: flex;
+            justify-content: center; /* Centering tabs horizontally */
+            margin-top: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .tabs a {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #d2e9e8;
+            color: black;
+            text-decoration: none;
+            border-radius: 4px;
+            width: 150px; /* Fixed width for consistency */
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .tabs a:hover {
+            background-color: #666;
+            color: white;
+        }
+
+    
+
+        /* Additional responsive design for small screens */
+        @media (max-width: 768px) {
+            .tabs a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="topics.html">Java Codes</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <body>
+
+        <h1>Arrays in PHP</h1>
+    
+        <h2>1. PHP Arrays</h2>
+        <p>An <strong>array</strong> is a data structure that allows you to store multiple values in a single variable. PHP supports both indexed arrays and associative arrays.</p>
+    
+        <h2>2. Creating Arrays</h2>
+        <p>There are multiple ways to create arrays in PHP:</p>
+        <ul>
+            <li><strong>Using the array() function:</strong></li>
+            <pre><code>
+    $fruits = array("Apple", "Banana", "Cherry");
+            </code></pre>
+            <li><strong>Using the shorthand syntax:</strong></li>
+            <pre><code>
+    $vegetables = ["Carrot", "Potato", "Onion"];
+            </code></pre>
+        </ul>
+    
+        <h2>3. Accessing Array Elements</h2>
+        <p>You can access individual elements in an array using their index. In PHP, indexes start from 0.</p>
+        <h3>Example:</h3>
+        <pre><code>
+    $fruits = ["Apple", "Banana", "Cherry"];
+    echo $fruits[1]; // Outputs: Banana
+        </code></pre>
+    
+        <h2>4. Multidimensional Arrays</h2>
+        <p>A multidimensional array is an array that contains one or more arrays. It can be thought of as an array of arrays.</p>
+        <h3>Example:</h3>
+        <pre><code>
+    $students = [
+        ["name" => "Alice", "age" => 22],
+        ["name" => "Bob", "age" => 20],
+        ["name" => "Charlie", "age" => 23]
+    ];
+    echo $students[1]["name"]; // Outputs: Bob
+        </code></pre>
+    
+        <h2>5. Inspecting Arrays</h2>
+        <p>To inspect arrays, you can use the <strong>print_r()</strong> and <strong>var_dump()</strong> functions, which provide detailed information about the array's structure and contents.</p>
+        <h3>Example:</h3>
+        <pre><code>
+    print_r($fruits);
+    var_dump($students);
+        </code></pre>
+    
+        <h2>6. Deleting from Arrays</h2>
+        <p>You can remove elements from an array using the <strong>unset()</strong> function.</p>
+        <h3>Example:</h3>
+        <pre><code>
+    unset($fruits[1]); // Removes "Banana"
+    print_r($fruits); // Outputs: Array ( [0] => Apple [2] => Cherry )
+        </code></pre>
+    
+        <h2>7. Iterating with each() and foreach()</h2>
+        <p>You can iterate through arrays using the <strong>foreach()</strong> loop, which is specifically designed for arrays. The <strong>each()</strong> function is deprecated in PHP 7.2. Use <strong>foreach()</strong> instead.</p>
+        <h3>Example:</h3>
+        <pre><code>
+    foreach ($fruits as $fruit) {
+        echo $fruit . " ";
+    }
+    // Outputs: Apple Cherry
+        </code></pre>
+    
+        <h2>8. Iterative Functions</h2>
+        <p>PHP provides several functions for traversing arrays:</p>
+        <ul>
+            <li><strong>current():</strong> Returns the current element of an array.</li>
+            <pre><code>
+    echo current($fruits); // Outputs: Apple
+            </code></pre>
+            <li><strong>next():</strong> Moves the internal pointer to the next element and returns it.</li>
+            <pre><code>
+    next($fruits);
+    echo current($fruits); // Outputs: Cherry
+            </code></pre>
+            <li><strong>prev():</strong> Moves the internal pointer to the previous element and returns it.</li>
+            <pre><code>
+    prev($fruits);
+    echo current($fruits); // Outputs: Apple
+            </code></pre>
+            <li><strong>reset():</strong> Moves the internal pointer to the first element of an array.</li>
+            <pre><code>
+    reset($fruits);
+    echo current($fruits); // Outputs: Apple
+            </code></pre>
+            <li><strong>end():</strong> Moves the internal pointer to the last element of an array.</li>
+            <pre><code>
+    end($fruits);
+    echo current($fruits); // Outputs: Cherry
+            </code></pre>
+        </ul>
+    
+    </body>
+    
+    
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <style>
+        /* Basic styling for the body and header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d1f0f2;
+        }
+
+        header {
+            background-color: #95dde4;
+            color: rgb(0, 0, 0);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #95dde4;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #d2e9e8;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+            color: white;
+        }
+
+        /* Styling for the vertical tabs */
+        .tabs-container {
+            display: flex;
+            justify-content: center; /* Centering tabs horizontally */
+            margin-top: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .tabs a {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #d2e9e8;
+            color: black;
+            text-decoration: none;
+            border-radius: 4px;
+            width: 150px; /* Fixed width for consistency */
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .tabs a:hover {
+            background-color: #666;
+            color: white;
+        }
+
+    
+
+        /* Additional responsive design for small screens */
+        @media (max-width: 768px) {
+            .tabs a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="topics.html">Java Codes</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <body>
+
+        <h1>Forms in PHP</h1>
+    
+        <h2>1. Working with HTML Form Controls and PHP</h2>
+        <p>Forms are essential for collecting user input in web applications. HTML provides various form controls, such as text fields, checkboxes, radio buttons, and drop-down lists, which can be processed using PHP.</p>
+        <h3>Example of an HTML Form:</h3>
+        <pre><code>
+    <form action="process.php" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+    
+        <input type="submit" value="Submit">
+    </form>
+        </code></pre>
+    
+        <h2>2. Superglobal Variables</h2>
+        <p>Superglobal variables in PHP are built-in global arrays that allow you to access information about the request and user input. The most common superglobals include:</p>
+        <ul>
+            <li><strong>$_GET:</strong> Used to collect data sent in the URL query string.</li>
+            <li><strong>$_POST:</strong> Used to collect data submitted via HTTP POST method.</li>
+            <li><strong>$_REQUEST:</strong> Combines data from both $_GET and $_POST.</li>
+            <li><strong>$_SESSION:</strong> Used to store session variables.</li>
+            <li><strong>$_COOKIE:</strong> Used to access cookie variables.</li>
+        </ul>
+    
+        <h2>3. Superglobal Array</h2>
+        <p>Superglobal arrays allow you to access information without needing to declare them as global. For instance, you can access user input through the $_POST superglobal array as follows:</p>
+        <h3>Example:</h3>
+        <pre><code>
+    // process.php
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    echo "Name: $name, Email: $email";
+        </code></pre>
+    
+        <h2>4. Importing User Input</h2>
+        <p>When a user submits a form, PHP can process the data using the superglobal arrays. It's essential to validate and sanitize user input to prevent security risks such as SQL injection or cross-site scripting (XSS).</p>
+        <h3>Example of Importing and Sanitizing User Input:</h3>
+        <pre><code>
+    // process.php
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    echo "Name: $name, Email: $email";
+        </code></pre>
+    
+        <h2>5. Accessing User Input</h2>
+        <p>You can access user input through the superglobal arrays like this:</p>
+        <h3>Example:</h3>
+        <pre><code>
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = $_POST['name'] ?? 'Guest';
+        echo "Welcome, $name!";
+    }
+        </code></pre>
+        <p>This code checks if the request method is POST and retrieves the name input, providing a default value if it's not set.</p>
+    
+    </body>
+    
+    
+
+</body>
+</html>

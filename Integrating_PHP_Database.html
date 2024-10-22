@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <style>
+        /* Basic styling for the body and header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d1f0f2;
+        }
+
+        header {
+            background-color: #95dde4;
+            color: rgb(0, 0, 0);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #95dde4;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #d2e9e8;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+            color: white;
+        }
+
+        /* Styling for the vertical tabs */
+        .tabs-container {
+            display: flex;
+            justify-content: center; /* Centering tabs horizontally */
+            margin-top: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .tabs a {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #d2e9e8;
+            color: black;
+            text-decoration: none;
+            border-radius: 4px;
+            width: 150px; /* Fixed width for consistency */
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .tabs a:hover {
+            background-color: #666;
+            color: white;
+        }
+
+    
+
+        /* Additional responsive design for small screens */
+        @media (max-width: 768px) {
+            .tabs a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="topics.html">Java Codes</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+
+    <body>
+
+        <h1>Integrating PHP and Database</h1>
+    
+        <h2>1. Connecting to Database</h2>
+        <p>To interact with a database using PHP, you first need to establish a connection. You can use the <strong>mysqli</strong> or <strong>PDO</strong> (PHP Data Objects) extensions. Below is an example using the <strong>mysqli</strong> extension:</p>
+        <pre><code>
+    // database.php
+    $servername = "localhost";
+    $username = "username";
+    $password = "password";
+    $dbname = "database_name";
+    
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+        </code></pre>
+    
+        <h2>2. Making SQL Queries</h2>
+        <p>Once the connection is established, you can make SQL queries to interact with the database. Common operations include SELECT, INSERT, UPDATE, and DELETE.</p>
+        <h3>Example of a SELECT Query:</h3>
+        <pre><code>
+    $sql = "SELECT * FROM users";
+    $result = $conn->query($sql);
+        </code></pre>
+    
+        <h2>3. Executing Queries</h2>
+        <p>After defining your SQL query, you can execute it using the appropriate method. For SELECT queries, you can use the <strong>query()</strong> method, while for INSERT, UPDATE, or DELETE, you can use <strong>execute()</strong>.</p>
+        <h3>Example of Executing a Query:</h3>
+        <pre><code>
+    // Executing a SELECT query
+    if ($result->num_rows > 0) {
+        // Output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo "id: " . $row["id"] . " - Name: " . $row["name"] . "<br>";
+        }
+    } else {
+        echo "0 results";
+    }
+        </code></pre>
+    
+        <h2>4. Fetching Data Sets</h2>
+        <p>After executing a query, you can fetch the result set using various methods, such as <strong>fetch_assoc()</strong>, <strong>fetch_array()</strong>, or <strong>fetch_row()</strong>.</p>
+        <h3>Example of Fetching Data:</h3>
+        <pre><code>
+    while($row = $result->fetch_assoc()) {
+        echo "id: " . $row["id"] . " - Name: " . $row["name"] . "<br>";
+    }
+        </code></pre>
+    
+        <h2>5. Integrating Forms and Databases</h2>
+        <h3>Basic Form Submission to a Database</h3>
+        <p>To submit data from an HTML form to a database, you can create a form and handle the data submission in a PHP script. Here’s a basic example:</p>
+        <pre><code>
+    <form action="submit.php" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <input type="submit" value="Submit">
+    </form>
+        </code></pre>
+        <p>And in the <strong>submit.php</strong> file:</p>
+        <pre><code>
+    $name = $_POST['name'];
+    $sql = "INSERT INTO users (name) VALUES ('$name')";
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+        </code></pre>
+    
+        <h3>Editing Data with an HTML Form</h3>
+        <p>To edit existing data, you can pre-fill an HTML form with the current values from the database. After editing, you can submit the form to update the record.</p>
+        <h3>Example of an Edit Form:</h3>
+        <pre><code>
+    $id = $_GET['id']; // Get the ID from the URL
+    $sql = "SELECT * FROM users WHERE id=$id";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    ?>
+    <form action="update.php" method="POST">
+        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<?php echo $row['name']; ?>" required>
+        <input type="submit" value="Update">
+    </form>
+    <?php
+        </code></pre>
+        <p>And in the <strong>update.php</strong> file:</p>
+        <pre><code>
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $sql = "UPDATE users SET name='$name' WHERE id=$id";
+    if ($conn->query($sql) === TRUE) {
+        echo "Record updated successfully";
+    } else {
+        echo "Error updating record: " . $conn->error;
+    }
+        </code></pre>
+    
+    </body>
+    
+
+</body>
+</html>

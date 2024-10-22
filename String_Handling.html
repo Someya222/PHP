@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <style>
+        /* Basic styling for the body and header */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d1f0f2;
+        }
+
+        header {
+            background-color: #95dde4;
+            color: rgb(0, 0, 0);
+            padding: 2px 0;
+            text-align: center;
+        }
+
+        /* Styling for the navigation bar */
+        nav {
+            background-color: #95dde4;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #d2e9e8;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover {
+            background-color: #666;
+            color: white;
+        }
+
+        /* Styling for the vertical tabs */
+        .tabs-container {
+            display: flex;
+            justify-content: center; /* Centering tabs horizontally */
+            margin-top: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .tabs a {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #d2e9e8;
+            color: black;
+            text-decoration: none;
+            border-radius: 4px;
+            width: 150px; /* Fixed width for consistency */
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .tabs a:hover {
+            background-color: #666;
+            color: white;
+        }
+
+    
+
+        /* Additional responsive design for small screens */
+        @media (max-width: 768px) {
+            .tabs a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Java</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="topics.html">Java Codes</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+
+    <body>
+
+        <h1>String Handling in PHP</h1>
+    
+        <h2>1. Interpolation with Curly Braces</h2>
+        <p>String interpolation allows you to embed variables directly within string literals. In PHP, you can use curly braces to clarify variable boundaries within double-quoted strings.</p>
+        <h3>Example:</h3>
+        <pre><code>
+    $name = "Alice";
+    echo "Hello, {$name}!"; // Outputs: Hello, Alice!
+        </code></pre>
+    
+        <h2>2. Characters and String Indexes</h2>
+        <p>Strings in PHP can be accessed using indexes, where the first character is at index 0. You can retrieve individual characters from a string using square brackets.</p>
+        <h3>Example:</h3>
+        <pre><code>
+    $string = "Hello";
+    echo $string[0]; // Outputs: H
+        </code></pre>
+    
+        <h2>3. String Operators</h2>
+        <p>PHP provides several operators to manipulate strings:</p>
+        <ul>
+            <li><strong>Concatenation Operator:</strong> The dot (.) operator is used to concatenate two strings.</li>
+            <pre><code>
+    $greeting = "Hello" . " World!"; // Outputs: Hello World!
+            </code></pre>
+            <li><strong>Concatenation Assignment Operator:</strong> The .= operator appends a string to the existing string.</li>
+            <pre><code>
+    $message = "Hello";
+    $message .= " World!"; // Outputs: Hello World!
+            </code></pre>
+        </ul>
+    
+        <h2>4. Heredoc</h2>
+        <p>Heredoc is a syntax for defining multi-line strings in PHP. It is similar to double-quoted strings and allows variable interpolation.</p>
+        <h3>Example:</h3>
+        <pre><code>
+    $heredoc = <<<EOD
+    This is a string
+    that spans multiple lines.
+    Hello, $name!
+    EOD;
+    
+    echo $heredoc;
+        </code></pre>
+    
+        <h2>5. String Functions</h2>
+        <p>PHP offers a variety of built-in string functions to perform common operations:</p>
+        <ul>
+            <li><strong>strlen():</strong> Returns the length of a string.</li>
+            <pre><code>
+    echo strlen("Hello"); // Outputs: 5
+            </code></pre>
+            <li><strong>strtoupper():</strong> Converts a string to uppercase.</li>
+            <pre><code>
+    echo strtoupper("hello"); // Outputs: HELLO
+            </code></pre>
+            <li><strong>strtolower():</strong> Converts a string to lowercase.</li>
+            <pre><code>
+    echo strtolower("HELLO"); // Outputs: hello
+            </code></pre>
+        </ul>
+    
+        <h2>6. Formatting Strings</h2>
+        <p>PHP provides functions for formatting strings, such as <strong>sprintf()</strong> and <strong>printf()</strong>, which allow you to create formatted output.</p>
+        <h3>Example:</h3>
+        <pre><code>
+    $number = 5;
+    $formattedString = sprintf("You have %d new messages.", $number);
+    echo $formattedString; // Outputs: You have 5 new messages.
+        </code></pre>
+    
+        <h2>7. Comparing and Searching Strings and Substrings</h2>
+        <p>PHP provides several functions to compare and search for substrings within strings:</p>
+        <ul>
+            <li><strong>strcmp():</strong> Compares two strings.</li>
+            <pre><code>
+    $result = strcmp("abc", "abc"); // Outputs: 0 (equal)
+            </code></pre>
+            <li><strong>strpos():</strong> Finds the position of the first occurrence of a substring.</li>
+            <pre><code>
+    $position = strpos("Hello World", "W"); // Outputs: 6
+            </code></pre>
+            <li><strong>substr():</strong> Returns a portion of a string.</li>
+            <pre><code>
+    $sub = substr("Hello World", 6, 5); // Outputs: World
+            </code></pre>
+        </ul>
+    
+    </body>
+    
+
+</body>
+</html>
